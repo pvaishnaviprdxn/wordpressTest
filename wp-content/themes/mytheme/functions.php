@@ -76,4 +76,20 @@
 
   //option for featured images
   add_theme_support('post-thumbnails');
+
+  //option page acf
+  if (function_exists('acf_add_options_page')) {
+    $parent = acf_add_options_page(
+        array(
+            'page_title'  => __('Theme General Settings'),
+            'menu_title'  => __('Options'),
+            'redirect'    => false,
+        )
+    );
+    $childA = acf_add_options_sub_page(array(
+        'page_title'  => __('Common Settings'),
+        'menu_title'  => __('Common'),
+        'parent_slug' => $parent['menu_slug'],
+    ));
+  }
 ?>
