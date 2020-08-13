@@ -11,6 +11,15 @@
     <header>
       <div class="wrapper">
         <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+        <?php 
+          if (function_exists('new_menu')) { 
+            new_menu();  
+          }
+          else {
+            $args = array('theme_location' => 'primary');
+            wp_nav_menu($args);
+          }
+        ?>
       </div>
     </header>
     <main>
