@@ -141,4 +141,27 @@ h2 a { color: black; }
 .featured-image {
   width: 300px;
   height: 400px;
+  padding: 20px 0;
 }
+
+.realted-posts { padding: 60px 0; }
+
+.realted-posts h3 {
+  font-size: 28px;
+  font-weight: 600; 
+}
+
+.realted-posts h3 a { color: black; }
+.realted-posts h3 a:hover { color: red; }
+
+.realted-posts ul { 
+  padding: 40px 0;
+  display: flex;
+
+}
+
+.realted-posts ul li {
+  width: 33.33%;
+  text-align: center;
+}
+.realted-posts ul li figure { padding:  0 100px; }
