@@ -10,14 +10,16 @@
   <?php if($categories) { ?>
     <section class="categories-dropdown">
       <div class="wrapper">
-        <select id="grades-category">
-          <option class="grades">All</option>
-          <?php 
-            foreach($categories as $cat) { ?>
-              <option class="grades" value="<?php echo $cat->term_id; ?>"><?php echo $cat->name;?></option>
-            <?php }
-          ?>
-        </select>
+        <form>
+          <select id="grades-category">
+            <option class="grades">All</option>
+            <?php 
+              foreach($categories as $cat) { ?>
+                <option class="grades" value="<?php echo $cat->term_id; ?>"><?php echo $cat->name;?></option>
+              <?php }
+            ?>
+          </select>
+        </form>
       </div>
     </section>
   <?php } 

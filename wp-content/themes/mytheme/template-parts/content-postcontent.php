@@ -18,17 +18,17 @@ if($myQuery->have_posts()) {
         <li>
           <?php 
             echo $featuredImage ? '<figure>'.$featuredImage.'</figure>' : null; 
-            echo $title ? '<h1><a href='.$detailslink.'>'.$title.'</a></h1>' : null; 
-            echo $date ? '<span><strong>'.$date.'</strong></span>' : null;
-            echo $excerpt ? '<p>'.$excerpt.'</p>' : null;
+            echo $title ? '<h2><a href='.$detailslink.'>'.$title.'</a></h2>' : null; 
+            echo $date ? '<p class="date"><strong>'.$date.'</strong></p>' : null;
+            echo $excerpt ? '<p class="excerpt">'.$excerpt.'</p>' : null;
             if ($showbtn) {
               foreach ($showbtn as $bt ) {
                 $btn = $bt['button'];
-                echo $btn ? '<a href="'.$detailslink.'" class="load">'.$btn.'</a>' : null;
+                echo $btn ? '<a href="'.$detailslink.'">'.$btn.'</a>' : null;
               }
             } 
             else { ?>
-              <a href="<?php echo $detailslink ?>" class="load">Show More</a>
+              <a href="<?php echo $detailslink ?>">Show More</a>
             <?php }
           ?>
         </li>
@@ -38,9 +38,8 @@ if($myQuery->have_posts()) {
 }
 ?>
 </ul>
- </div>
-</section>
-<div class="load-more">
-  <span>Load More</span>
 </div>
+</section>
+
+
 

@@ -96,3 +96,49 @@ li {
   width: 86%; 
   margin: 0 auto;
 }
+
+header { padding: 20px 0; }
+
+h1 { 
+
+  display: inline-block;
+  color: black;
+  font-size: 56px;
+  font-weight: 600;
+}
+
+nav { 
+
+  padding-left: 50px;
+  display: inline-block;
+}
+nav ul li { padding: 0 10px;}
+
+nav ul li a { 
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+nav ul li a:hover,
+h2 a:hover { color: red; }
+
+.categories-dropdown { padding: 20px 0; }
+
+h2 { 
+  padding: 10px 0;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.date,
+.excerpt { padding: 10px 0; }
+
+h2 a { color: black; }
+
+.posts-grades li { padding: 20px 0; }
+
+.featured-image {
+  width: 300px;
+  height: 400px;
+}
