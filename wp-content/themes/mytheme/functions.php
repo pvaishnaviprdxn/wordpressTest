@@ -28,6 +28,11 @@
     } 
     echo $menu_list;
   }
+  //excerpt
+  function excerptlen( $length ) {
+	  return 50;
+  }
+  add_filter( 'excerpt_length', 'excerptlen', 999 );
   //editor change
   add_filter('use_block_editor_for_post', '__return_false');
 
