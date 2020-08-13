@@ -13,5 +13,5 @@ $featuredImage = get_the_post_thumbnail($page->ID, 'thumbnail', array( 'class' =
   </div>
   <?php
 }
-
+get_template_part('template-parts/content','relatedposts'); 
 ?>
