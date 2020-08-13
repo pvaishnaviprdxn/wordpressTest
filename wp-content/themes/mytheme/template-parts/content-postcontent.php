@@ -40,4 +40,7 @@ if($myQuery->have_posts()) {
 </ul>
  </div>
 </section>
+<div class="load-more">
+  <span>Load More</span>
+</div>
 
