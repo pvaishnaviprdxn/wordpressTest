@@ -156,7 +156,6 @@
 
 
   function more_post_ajax() {
-
     $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 6;
     $page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 1;
     $args = array(
@@ -165,47 +164,46 @@
         'posts_per_page' => $ppp,
         'paged'    => $page,
     );
-    
+
     $loop = new WP_Query($args); ?> 
     <section class="posts-filter">
       <div class="wrapper">
         <ul class="posts-grades">
         <?php 
-        if($loop->have_posts()) {
-          while($loop->have_posts()) {
-            $loop->the_post(); 
-            $title= get_the_title();
-            $excerpt = get_the_excerpt();
-            $date = get_the_date();
-            $featuredImage = get_the_post_thumbnail($page->ID, 'thumbnail', array( 'class' => 'featured-image' ) ); 
-            $showbtn = get_field('cta_buttons');
-            $detailslink = get_the_permalink(); ?>
-            <?php if ($title || $excerpt || $featuredImage) { ?>
-                <li>
-                  <?php 
-                    echo $featuredImage ? '<figure>'.$featuredImage.'</figure>' : null; 
-                    echo $title ? '<h2><a href='.$detailslink.'>'.$title.'</a></h2>' : null; 
-                    echo $date ? '<p class="date"><strong>'.$date.'</strong></p>' : null;
-                    echo $excerpt ? '<p class="excerpt">'.$excerpt.'</p>' : null;
-                    if ($showbtn) {
-                      foreach ($showbtn as $bt ) {
-                        $btn = $bt['button'];
-                        echo $btn ? '<a href="'.$detailslink.'">'.$btn.'</a>' : null;
-                      }
-                    } 
-                    else { ?>
-                      <a href="<?php echo $detailslink ?>">Show More</a>
-                    <?php }
-                  ?>
-                </li>
-            <?php } 
-          }
-          wp_reset_query();
-        }
-        ?>
-</ul>
-</div>
-</section>
+          if($loop->have_posts()) {
+            while($loop->have_posts()) {
+              $loop->the_post(); 
+              $title= get_the_title();
+              $excerpt = get_the_excerpt();
+              $date = get_the_date();
+              $featuredImage = get_the_post_thumbnail($page->ID, 'thumbnail', array( 'class' => 'featured-image' ) ); 
+              $showbtn = get_field('cta_buttons');
+              $detailslink = get_the_permalink(); ?>
+              <?php if ($title || $excerpt || $featuredImage) { ?>
+                  <li>
+                    <?php 
+                      echo $featuredImage ? '<figure>'.$featuredImage.'</figure>' : null; 
+                      echo $title ? '<h2><a href='.$detailslink.'>'.$title.'</a></h2>' : null; 
+                      echo $date ? '<p class="date"><strong>'.$date.'</strong></p>' : null;
+                      echo $excerpt ? '<p class="excerpt">'.$excerpt.'</p>' : null;
+                      if ($showbtn) {
+                        foreach ($showbtn as $bt ) {
+                          $btn = $bt['button'];
+                          echo $btn ? '<a href="'.$detailslink.'">'.$btn.'</a>' : null;
+                        }
+                      } 
+                      else { ?>
+                        <a href="<?php echo $detailslink ?>">Show More</a>
+                      <?php }
+                    ?>
+                  </li>
+              <?php } 
+            }
+            wp_reset_query();
+          } ?>
+          </ul>
+        </div>
+      </section>
     
     
  <?php }
