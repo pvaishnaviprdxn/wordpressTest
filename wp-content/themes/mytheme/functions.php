@@ -130,8 +130,9 @@
                   if ($title || $excerpt || $featuredImage) { ?>
                     <li>
                       <?php 
-                        echo $featuredImage ? '<figure>'.$featuredImage.'</figure>' : null; 
-                        echo $title ? '<h2><a href='.$detailslink.'>'.$title.'</a></h2>' : null; 
+                        echo $featuredImage ? '<figure>'.$featuredImage.'</figure>' : null; ?>
+                        <h2><a href='<?php echo $detailslink?>'><?php echo $title; ?></a></h2>
+                        <?php 
                         echo $date ? '<span><strong>'.$date.'</strong></span>' : null;
                         echo $excerpt ? '<p>'.$excerpt.'</p>' : null;
                         if ($showbtn) {
