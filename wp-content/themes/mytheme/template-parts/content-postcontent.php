@@ -40,6 +40,13 @@ if($myQuery->have_posts()) {
 </ul>
 </div>
 </section>
+<?php 
+  $showmorebtn = get_field('show_more_posts');
+  if($showmorebtn) { ?>
+    <div class="wrapper">
+      <a class="show"><?php echo $showmorebtn; ?></a>
+    </div>
+  <?php } ?>
 
 
 

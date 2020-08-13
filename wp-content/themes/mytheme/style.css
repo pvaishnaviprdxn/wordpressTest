@@ -164,4 +164,12 @@ h2 a { color: black; }
   width: 33.33%;
   text-align: center;
 }
+
 .realted-posts ul li figure { padding:  0 100px; }
+
+.show {
+  color: green;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 600;
+}
